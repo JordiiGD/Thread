@@ -7,6 +7,8 @@ public class WorkPanel extends JPanel {
 
     private int x = 300;
     private int y = 300;
+    private int xImage = 450;
+    private int yImage = 100;
     public WorkPanel(){
         initComponents();
     }
@@ -21,6 +23,9 @@ public class WorkPanel extends JPanel {
 
         g.setColor(Color.LIGHT_GRAY);
         g.drawOval(x, y, 40,40);
+
+        Image image = new ImageIcon("src/data/jorge.jpg").getImage();
+        g.drawImage(image, xImage, yImage, 40, 40, null);
     }
 
     public void left(){
@@ -40,6 +45,26 @@ public class WorkPanel extends JPanel {
 
     public void down(){
         y = y + 10;
+        repaint();
+    }
+
+    public void leftImage(){
+        xImage = xImage - 10;
+        repaint();
+    }
+
+    public void rigthImage(){
+        xImage = xImage + 10;
+        repaint();
+    }
+
+    public void upImage(){
+        yImage = yImage - 10;
+        repaint();
+    }
+
+    public void downImage(){
+        yImage = yImage + 10;
         repaint();
     }
 }

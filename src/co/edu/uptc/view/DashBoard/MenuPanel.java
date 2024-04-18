@@ -13,6 +13,10 @@ public class MenuPanel extends JPanel {
     private JButton btnDown;
     private JButton btnLeft;
     private JButton btnRight;
+    private JButton btnUpImage;
+    private JButton btnDownImage;
+    private JButton btnLeftImage;
+    private JButton btnRightImage;
     private DashBoard dashBoard;
 
     public MenuPanel(){
@@ -26,12 +30,20 @@ public class MenuPanel extends JPanel {
         createBtnDown();
         createBtnUp();
         createBtnRigth();
+        createBtnLeftImage();
+        createBtnDownImage();
+        createBtnUpImage();
+        createBtnRigthImage();
         this.add(btnLeft);
         this.add(btnUp);
-        this.add(btnStart);
-        this.add(btnStop);
         this.add(btnDown);
         this.add(btnRight);
+        this.add(btnStart);
+        this.add(btnStop);
+        this.add(btnLeftImage);
+        this.add(btnUpImage);
+        this.add(btnDownImage);
+        this.add(btnRightImage);
     }
 
     public void createBtns(){
@@ -75,6 +87,46 @@ public class MenuPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dashBoard.workPanel.rigth();
+            }
+        });
+    }
+
+    public void createBtnLeftImage(){
+        btnLeftImage = new JButton("<");
+        btnLeftImage.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dashBoard.workPanel.leftImage();
+            }
+        });
+    }
+
+    public void createBtnUpImage(){
+        btnUpImage = new JButton("^");
+        btnUpImage.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dashBoard.workPanel.upImage();
+            }
+        });
+    }
+
+    public void createBtnDownImage(){
+        btnDownImage = new JButton("v");
+        btnDownImage.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dashBoard.workPanel.downImage();
+            }
+        });
+    }
+
+    public void createBtnRigthImage(){
+        btnRightImage = new JButton(">");
+        btnRightImage.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dashBoard.workPanel.rigthImage();
             }
         });
     }
